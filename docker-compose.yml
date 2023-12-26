@@ -1,0 +1,12 @@
+
+services:
+  iperf:
+    container_name: iperf
+    restart: unless-stopped
+    image: networkstatic/iperf3
+    ports:
+      - 127.0.0.1:3050:5201
+    command: iperf3 -s -p 5201
+
+#client command
+#iperf3 -c localhost -p 3050
